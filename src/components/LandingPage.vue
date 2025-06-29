@@ -18,7 +18,9 @@
         @click="selectChallenge(challenge)"
       >
         <div class="card-content">
-          <DifficultyBadge :difficulty="challenge.difficulty" />
+          <div class="card-header">
+            <DifficultyBadge :difficulty="challenge.difficulty" />
+          </div>
           <h3>{{ challenge.title }}</h3>
           <p>{{ challenge.description }}</p>
           <div class="card-footer">
@@ -121,6 +123,15 @@ header {
   transition: background-color 0.3s ease;
   border-radius: 8px;
   color: var(--color-card-text);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
 }
 
 .card-content h3 {
@@ -131,6 +142,7 @@ header {
 .card-content p {
   color: var(--color-card-desc);
   margin: 0.5rem 0 1rem 0;
+  flex-grow: 1;
 }
 
 /* Challenge completion states */
@@ -149,7 +161,7 @@ header {
 }
 
 .card-footer {
-  margin-top: 1rem;
+  margin-top: auto;
   display: flex;
   justify-content: flex-end;
 }
