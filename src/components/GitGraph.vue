@@ -81,7 +81,7 @@ const props = defineProps<{
   gitRepo: GitRepo
 }>()
 
-const emit = defineEmits<{
+defineEmits<{
   'select-commit': [commit: GitCommit]
 }>()
 

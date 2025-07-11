@@ -33,30 +33,8 @@ watch(() => props.targetState, () => {
 function initializeGitGraph() {
   if (!graphContainer.value) return
 
-  // Initialize gitgraph with some styling options
-  gitgraph = createGitgraph(graphContainer.value, {
-    template: {
-      colors: ['#2196F3', '#4CAF50', '#FFC107', '#9C27B0'],
-      branch: {
-        lineWidth: 3,
-        spacing: 50,
-        label: {
-          font: 'normal 12px Arial',
-          color: '#2c3e50'
-        }
-      },
-      commit: {
-        spacing: 60,
-        dot: {
-          size: 8
-        },
-        message: {
-          font: 'normal 12px Arial',
-          color: '#2c3e50'
-        }
-      }
-    }
-  })
+  // Initialize gitgraph with basic styling
+  gitgraph = createGitgraph(graphContainer.value)
 
   // Create branches and commits from targetState
   const branches: { [key: string]: any } = {}
